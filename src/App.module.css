@@ -33,10 +33,11 @@ ul li {
     padding: 0.7rem 0;
     cursor: pointer;
     transition: all 0.15s ease-in-out;
-    &:hover {
-        color: #fff;
-        font-weight: bold;
-    }
+}
+
+ul li:hover {
+    color: #fff;
+    font-weight: bold;
 }
 
 .copyright {
@@ -50,6 +51,7 @@ ul li {
     font-family: "Quicksand", "Ubuntu", sans-serif;
     height: calc(100vh - 6rem);
     background-color: #0f0f0f;
+    display: flex;
 }
 
 .PlaybarLogin {
