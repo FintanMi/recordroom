@@ -1,11 +1,14 @@
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import Login from './pages/auth/Login';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
-  );
+
+    return (
+        <div>
+            <Login />
+        </div>
+        
+    );
 }
 
 export default App;
