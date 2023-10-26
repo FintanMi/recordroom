@@ -1,5 +1,8 @@
 import React from 'react'
 import styles from '../App.module.css'
+import {ReactComponent as LibraryIcon} from '../assets/library.svg'
+import {ReactComponent as HomeIcon} from '../assets/home.svg'
+import {ReactComponent as SearchIcon} from '../assets/search.svg'
 
 function NavBar() {
   return (
@@ -8,9 +11,9 @@ function NavBar() {
             Record Room
         </div>
         <ul>
-            <li>Home</li>
-            <li>Search</li>
-            <li>Your Library</li>
+            <li><HomeIcon />Home</li>
+            <li><SearchIcon />Search</li>
+            <li><LibraryIcon />Your Library</li>
         </ul>
         <div className={styles.copyright}>
             <span>copyright</span>

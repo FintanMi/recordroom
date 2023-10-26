@@ -1,5 +1,7 @@
 .MainLogin {
     width: 100%;
+    overflow-y: scroll;
+    padding-top: 3.8rem;
 }
 
 .NavTop {
@@ -10,4 +12,7 @@
     align-items: center;
     color: #fff;
     padding: 0.25rem 0.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
