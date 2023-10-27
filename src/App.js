@@ -1,11 +1,16 @@
-import { Switch, Route } from 'react-router-dom';
-import Login from './pages/auth/Login';
+import styles from './AppNew.module.css'
+import NavBarNew from './components/NavBarNew';
+import MainNew from './components/MainNew';
 
-function App() {
+const App = () => {
 
     return (
-        <div>
-            <Login />
+        <div className={styles.outerWrap}>
+            <div className={styles.AppNew}>
+                <NavBarNew />
+                <MainNew />
+            </div>
+            <div className={styles.musicControls}>playbar</div>
         </div>
         
     );

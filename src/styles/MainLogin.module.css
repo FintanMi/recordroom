@@ -2,6 +2,7 @@
     width: 100%;
     overflow-y: scroll;
     padding-top: 3.8rem;
+    position: relative;
 }
 
 .NavTop {

@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", "Ubuntu", sans-serif;
+}
+
+.AppNew {
+    height: calc(100vh - 90px);
+    background: red;
+    display: flex;
+}
+
+.navBar {
+    width: 260px;
+    height: 100%;
+    background: firebrick;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    padding: 0.3rem 0.4rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    color: #fff;
+    list-style-type: none;
+    padding: 0.5rem 0.3rem;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+ul li svg {
+    margin-right: 1rem;
+    fill: #fff;
+}
+
+ul li:hover {
+    color: #c2c2c2;
+}
+
+ul li:active {
+    background: green;
+}
+
+.copy {
+    font-size: 0.6rem;
+    margin-top: auto;
+    text-align: center;
+}
+
+.outerWrap {
+    background: #000;
+    height: 100vh;
+    min-height: 100%;
+}
+
+.musicControls {
+    background: grey;
+    text-align: center;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
