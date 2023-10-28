@@ -3,6 +3,7 @@ import styles from '../AppNew.module.css'
 import {ReactComponent as LibraryIcon} from '../assets/library.svg'
 import {ReactComponent as HomeIcon} from '../assets/home.svg'
 import {ReactComponent as SearchIcon} from '../assets/search.svg'
+import {Link} from 'react-router-dom'
 
 const NavBarNew = () => {
   return (
@@ -12,9 +13,9 @@ const NavBarNew = () => {
                 <h4>Record Room</h4>
             </div>
             <ul>
-                <li><HomeIcon className={styles.HomeIcon} />Home</li>
-                <li><SearchIcon />Search</li>
-                <li><LibraryIcon className={styles.LibraryIcon} />Library</li>
+                <Link to='/'><li><HomeIcon className={styles.HomeIcon} />Home</li></Link>
+                <Link to='/search'><li><SearchIcon />Search</li></Link>
+                <Link to='/library'><li><LibraryIcon />Library</li></Link>
             </ul>
             <div className={styles.copy}>
                 <span>copyright</span>

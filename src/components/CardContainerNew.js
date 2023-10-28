@@ -21,9 +21,9 @@ const CardContainerNew = () => {
 
     return (
         <div>
-            {cardData.map(category => (
-                <div className={styles.CardsWrap}>
-                <h1>{category.name}</h1>
+            {cardData.map((category, id) => (
+                <div className={styles.CardsWrap} key={id}>
+                <h3>{category.name}</h3>
                 <Playlists category_id={category.id} />
                     
                 </div>
