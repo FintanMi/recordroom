@@ -1,22 +1,72 @@
+.MainNew {
+    width: 100%;
+    overflow-y: scroll;
+    padding-top: 3.5rem;
+    
+}
+
 .NavTop {
     background: #fff;
     color: #000;
-    height: 56px;
-    width: 100%;
-    display: flex;
-    align-items: center;
+    height: 3.5rem;
+    width: calc(100% - 260px);
     padding: 0.5rem 1rem;
     position: fixed;
     top: 0;
     z-index: 2;
 }
 
-.MainNew {
-    width: 100%;
-    overflow-y: scroll;
-    position: relative;
-    padding-top: 3.5rem;
+.NavTopBtnContainer {
+    display: flex;
 }
+
+.NavTopNavigationBtnsLeft {
+    padding-top: 0.1rem;
+}
+
+.NavTopNavigationBtns {
+    margin-left: auto;
+}
+
+.NavTopBtnLeft {
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 100px;
+    border: 0px;
+    padding: 0.5rem 0.8rem;
+    margin-right: 1rem;
+    position: relative;
+}
+
+.NavTopBtn {
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    border: 0px;
+    border-radius: 100px;
+    padding: 0.5rem 0.8rem;
+    position: relative;
+}
+
+.NavTopBtnRight {
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    align-content: flex-end;
+    text-decoration: none;
+    border: 0px;
+    border-radius: 100px;
+    padding: 0.5rem 0.8rem;
+    position: relative;
+}
+
+
 
 .MainContent {
     padding: 0.4rem 2rem;
@@ -28,15 +78,14 @@
 }
 
 .CardsWrapInner {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 }
 
 .Card {
     background: #333333;
     border-radius: 10px;
-    width: 13.5rem;
-    height: 18rem;
     overflow: hidden;
     position: relative;
     padding: 1.2rem;

@@ -5,7 +5,7 @@ import {ReactComponent as HomeIcon} from '../assets/home.svg'
 import {ReactComponent as SearchIcon} from '../assets/search.svg'
 import {Link} from 'react-router-dom'
 
-const NavBarNew = () => {
+const SidebarNew = () => {
   return (
     <div>
         <div className={styles.navBar}>
@@ -25,4 +25,4 @@ const NavBarNew = () => {
   )
 }
 
-export default NavBarNew
+export default SidebarNew

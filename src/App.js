@@ -1,5 +1,5 @@
 import styles from './AppNew.module.css'
-import NavBarNew from './components/NavBarNew';
+import NavBarNew from './components/SidebarNew';
 import MainNew from './components/MainNew';
 
 const App = () => {
