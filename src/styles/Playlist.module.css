@@ -93,27 +93,72 @@
     margin-right: 0.5rem;
 }
 
-.PlaylistTable {
-    padding: 1rem;
+.PlaylistContainer {
+    padding: 0 1.2rem;
     height: 100%;
 }
 
-.SongRows {
-    margin: 0;
+.PlaylistTitleRow {
+    display: grid;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.PlaylistTitleRowContent {
     display: flex;
     align-items: center;
 }
 
-Col {
-    margin: 0;
+.PlaylistRow {
+    display: grid;
+    gap: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 1.2rem;
 }
 
-.PlaylistTableSongInfo {
-    width: 100%;
+.PlaylistRowContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.PlaylistTableSongInfo img {
-    width: 2.2rem;
-    height: 2.2rem;
+.TrackNumberBtn {
+    display: none;
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.TrackNumberBtn:hover {
+    display: block;
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.PlaylistRowContentColumn {
+    display: flex;
+    align-items: center;
+}
+
+.PlaylistRowContent img {
+    width: 2.5rem;
+    height: 2.5rem;
     margin-right: 0.5rem;
+}
+
+.PlaylistRowContent:hover {
+    background: #c2c2c2;
+    border-radius: 5px;
+}
+
+.TrackNumber:hover {
+    cursor: pointer;
+}
+
+.PlaylistRowContentColumnDesc {
+    text-align: left;
+}
+
+.PlaylistRowContentColumnArtist {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
 }

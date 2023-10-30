@@ -42,28 +42,38 @@ const Playlist = () => {
                     </div>
                     
                 </div>
-                <div className={styles.PlaylistTable}>
-                    <div className={styles.PlaylistTable}>
-                        <Container fluid>
-                            <Row>
-                                <Col>#</Col>
-                                <Col>Title</Col>
-                                <Col>Album</Col>
-                                <Col>Date Added</Col>
-                                <Col>Duration</Col>
-                            </Row>
-                            <Row className={styles.SongRows}>
-                                <Col>1</Col>
-                                <Col>
-                                    <div className={styles.PlaylistTableSongInfo}>
-                                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="concert crowd" />
-                                        <span>I Wanna Be Sedated</span>
-                                        <span>Ramones</span>
-                                    </div>
+                <div className={styles.PlaylistContainer}>
+                    <div className={styles.PlaylistContentInner} role="grid" aria-colcount="5">
+                        <Container>
+                            <Row className={styles.PlaylistTitleRow}>
+                                <Col className={styles.PlaylistTitleRowContent}>
+                                    <Col xs={1}>#</Col>
+                                    <Col xs={5}>Title</Col>
+                                    <Col xs={3}>Album</Col>
+                                    <Col xs={2}>Date Added</Col>
+                                    <Col xs={1}>Duration</Col>
                                 </Col>
-                                <Col>Road To Ruin</Col>
-                                <Col>2 weeks ago</Col>
-                                <Col>2:29</Col>
+                            </Row>
+                            <hr />
+                            <Row className={styles.PlaylistRow}>
+                                <Col className={styles.PlaylistRowContent}>
+                                    <Col xs={1}>
+                                        <span className={styles.TrackNumber}>1</span>
+                                        <PlayIcon className={styles.TrackNumberBtn} />
+                                    </Col>
+                                    <Col xs={5} className={styles.PlaylistRowContentColumn}>
+                                        <div>
+                                            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="concert crowd" />
+                                        </div>
+                                        <div className={styles.PlaylistRowContentColumnDesc}>   
+                                            <span>I Wanna Be Sedated</span>
+                                            <span className={styles.PlaylistRowContentColumnArtist}>Ramones</span>
+                                        </div>
+                                    </Col>
+                                    <Col xs={3}>Road To Ruin</Col>
+                                    <Col xs={2}>2 weeks ago</Col>
+                                    <Col xs={1}><span>2:29</span></Col>
+                                </Col>
                             </Row>
                         </Container>
                     </div>
