@@ -1,5 +1,6 @@
 .Playlist {
     display: flex;
+    color: #fff;
 }
 
 .PlaylistPage {
@@ -72,7 +73,8 @@
     border-radius: 50%;
     overflow: hidden;
     display: flex;
-    background: #000;
+    background: #0575e6;
+    color: #000;
     margin-left: auto;
     padding: 1.1rem 1.2rem 1.2rem 1.3rem;
     position: absolute;
@@ -102,6 +104,7 @@
     display: grid;
     gap: 1rem;
     padding: 0 1rem;
+    color: #c2c2c2;
 }
 
 .PlaylistTitleRowContent {

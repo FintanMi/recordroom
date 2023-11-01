@@ -1,0 +1,29 @@
+.Register {
+    background: #050505;
+    height: calc(100vh - 90px);
+    font-size: 2rem;
+}
+
+.RegisterBtn {
+    font-size: 1rem;
+    font-weight: 600;
+    align-self: center;
+    border-radius: 100px;
+    border-color: transparent;
+    background: #0575e6;
+    color: #050505;
+    padding: 4px 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    min-width: 75px;
+}
+
+.RegisterBtnShape {
+    padding: 10px 50px;
+    width: 100%;
+}
+
+.alreadyLogin {
+    font-size: 0.5rem;
+    padding-left: 1.5rem;
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import styles from '../styles/MainNew.module.css'
 import Playlists from './Playlists'
 

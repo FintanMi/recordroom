@@ -7,14 +7,15 @@
 
 .AppNew {
     height: calc(100vh - 90px);
-    background: red;
+    background-color: #0f0f0f;
     display: flex;
+    border-radius: 0px 10px;
 }
 
 .navBar {
-    width: 260px;
+    width: 16.25rem;
     height: 100%;
-    background: firebrick;
+    background: #050505;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -22,6 +23,7 @@
 
 .logo {
     padding: 0.3rem 0.4rem;
+    color: #c2c2c2;
 }
 
 ul {
@@ -30,7 +32,7 @@ ul {
 }
 
 ul li {
-    color: #fff;
+    color: #c2c2c2;
     list-style-type: none;
     padding: 0.5rem 0.3rem;
     cursor: pointer;
@@ -41,11 +43,11 @@ ul li {
 
 ul li svg {
     margin-right: 1rem;
-    fill: #fff;
+    fill: #c2c2c2;
 }
 
 ul li:hover {
-    color: #c2c2c2;
+    color: #fff;
 }
 
 ul a {
@@ -68,12 +70,9 @@ ul a {
 }
 
 .musicControls {
-    background: grey;
-    text-align: center;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
     color: #fff;
     position: relative;
     z-index: 2;
