@@ -17,6 +17,7 @@ const MainNew = () => {
                 <Route path='/library'>Library</Route>
                 <Route path='/playlist/:id' component={Playlist}></Route>
                 <Route path='/register' exact render={() => <Register />}></Route>
+                <Route path='/login'>Login</Route>
             </Switch>
         </div>
         
