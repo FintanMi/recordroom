@@ -10,23 +10,24 @@ import axios from 'axios'
 const Register = () => {
 
     const [registerData, setRegisterData] = useState({
+        email: '',
         username: '',
         password1: '',
         password2: ''
     });
 
-    const {username, password1, password2} = registerData;
+    const {email, username, password1, password2} = registerData;
     const [errors, setErrors] = useState({});
     const history = useHistory();
-    const handleChange = (event) => {
+    const handleChange = (e) => {
         setRegisterData({
           ...registerData,
-          [event.target.name]: event.target.value,
+          [e.target.name]: e.target.value,
         });
       };
 
-      const handleSubmit = async (event) => {
-        event.preventDefault();
+      const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
           await axios.post("/dj-rest-auth/registration/", registerData);
           history.push("/login");
@@ -37,11 +38,30 @@ const Register = () => {
 
     return (
         <Row className={styles.Register}>
-            <Col className=" py-2 p-md-2" md={5}>
+            <Col></Col>
+            <Col className="py-2 p-md-2" md={5}>
                 <Container className='p-4'>
-                    <h1>Sign up and listen</h1>
+                    <div className={styles.RegisterHeader}>
+                        <h1>Sign up and listen</h1>
+                    </div>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group controlId="username">
+                        <Form.Group controlId="email"className={styles.Group}>
+                            <Form.Label className="d-none">Email</Form.Label>
+                            <Form.Control
+                                className={styles.Input}
+                                type="text"
+                                placeholder="Email"
+                                name="email"
+                                value={email}
+                                onChange={handleChange} />
+                        </Form.Group>
+                        {errors.email?.map((message, idx) => (
+                            <Alert variant='warning' key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+
+                        <Form.Group controlId="username"className={styles.Group}>
                             <Form.Label className="d-none">Username</Form.Label>
                             <Form.Control
                                 className={styles.Input}
@@ -52,10 +72,12 @@ const Register = () => {
                                 onChange={handleChange} />
                         </Form.Group>
                         {errors.username?.map((message, idx) => (
-                            <Alert variant='warning' key={idx}>{message}</Alert>
+                            <Alert variant='warning' key={idx}>
+                                {message}
+                            </Alert>
                         ))}
 
-                        <Form.Group controlId="password1">
+                        <Form.Group controlId="password1" className={styles.Group}>
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control
                                 className={styles.Input}
@@ -66,7 +88,9 @@ const Register = () => {
                                 onChange={handleChange} />
                         </Form.Group>
                         {errors.password1?.map((message, idx) => (
-                            <Alert variant='warning' key={idx}>{message}</Alert>
+                            <Alert variant='warning' key={idx}>
+                                {message}
+                            </Alert>
                         ))}
 
                         <Form.Group controlId="password2">
@@ -80,14 +104,18 @@ const Register = () => {
                                 onChange={handleChange} />
                         </Form.Group>
                         {errors.password2?.map((message, idx) => (
-                            <Alert variant='warning' key={idx}>{message}</Alert>
+                            <Alert variant='warning' key={idx}>
+                                {message}
+                            </Alert>
                         ))}
 
                         <Button type='submit' className={`${styles.RegisterBtn} ${styles.RegisterBtnShape}`}>
                             Register
                         </Button>
                         {errors.non_field_errors?.map((message, idx) => (
-                            <Alert key={idx} variant='warning'>{message}</Alert>
+                            <Alert key={idx} variant='warning'>
+                                {message}
+                            </Alert>
                         ))}
                     </Form>
                 </Container>
@@ -97,9 +125,7 @@ const Register = () => {
                     </Link>
                 </Container>
             </Col>
-            <Col md={6} className="my-auto d-none d-md-block p-2">
-
-            </Col>
+            <Col></Col>
         </Row>
     )
 }
