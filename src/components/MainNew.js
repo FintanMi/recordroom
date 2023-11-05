@@ -20,6 +20,7 @@ const MainNew = () => {
                 <Route path='/playlist/:id' component={Playlist}></Route>
                 <Route path='/register' exact render={() => <Register />}></Route>
                 <Route path='/login' exact component={Login}></Route>
+                <Route render={() => <p>Page not found</p>} />
             </Switch>
         </div>
         

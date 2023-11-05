@@ -53,7 +53,11 @@ const Register = () => {
                                 placeholder="Email"
                                 name="email"
                                 value={email}
-                                onChange={handleChange} />
+                                onChange={handleChange}
+                            />
+                            <Form.Control.Feedback type='invalid'>
+                                {errors.email}
+                            </Form.Control.Feedback>
                         </Form.Group>
                         {errors.email?.map((message, idx) => (
                             <Alert variant='warning' key={idx}>

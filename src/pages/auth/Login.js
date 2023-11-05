@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
@@ -6,12 +6,12 @@ import styles from '../../styles/Login.module.css'
 import { useHistory } from 'react-router-dom'
 import { Alert, Button, Form } from 'react-bootstrap'
 import axios from 'axios'
-import { SetCurrentUserContext, useSetCurrentUser } from "../../context/CurrentUserContext";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 import { setTokenTimestamp } from "../../utils/utils";
 
 function Login() {
-    const setCurrentUser = useContext(SetCurrentUserContext);
+    const setCurrentUser = useSetCurrentUser();
     useRedirect('loggedIn');
     const [loginData, setLoginData] = useState({
         username: '',
@@ -34,7 +34,7 @@ function Login() {
             const {data} = await axios.post("/dj-rest-auth/login/", loginData);
             setCurrentUser(data.user);
             setTokenTimestamp(data);
-            history.goBack();
+            history.push('/');
         } catch (err) {
             setErrors(err.response?.data);
         }

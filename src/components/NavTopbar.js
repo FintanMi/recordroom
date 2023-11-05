@@ -1,13 +1,35 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styles from '../styles/MainNew.module.css'
 import {ReactComponent as Right} from '../assets/right.svg'
 import {ReactComponent as Left} from '../assets/left.svg'
 import {Link} from 'react-router-dom'
-import { CurrentUserContext } from '../App'
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext'
+import Avatar from './Avatar'
+import axios from 'axios'
 
 const NavTopbar = () => {
-    const currentUser = useContext(CurrentUserContext);
-    const loggedInIcons = <>{currentUser?.username}</>
+    const currentUser = useCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
+
+    const handleSignOut = async () => {
+        try {
+            await axios.post("dj-rest-auth/logout/");
+            setCurrentUser(null);
+        } catch(err) {
+            console.log(err);
+        }
+    }
+    ;
+    const loggedInIcons = <>
+            <div className={styles.NavTopNavigationBtns}>
+                <Link to='/discover'>Discover</Link>
+                <Link to='/favourites'><i className="fas fa-heart"></i> Favourites</Link>
+                <Link to='/' onClick={handleSignOut}><i className='fas fa-sign-out-alt'></i> Sign Out</Link>
+                <Link to={`/profiles/${currentUser?.profile_id}`}>
+                    <Avatar src={currentUser?.profile_image} text='Profile' height={40} />
+                </Link>
+            </div>
+        </>
     const loggedOutIcons = (
         <div className={styles.NavTopNavigationBtns}>
             <Link to='/register' className={styles.NavTopBtnLeft}>Register</Link>
