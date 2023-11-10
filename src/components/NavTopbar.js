@@ -6,10 +6,12 @@ import {Link} from 'react-router-dom'
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext'
 import Avatar from './Avatar'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 const NavTopbar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
+    const history = useHistory();
 
     const handleSignOut = async () => {
         try {
@@ -40,8 +42,8 @@ const NavTopbar = () => {
         <div className={styles.NavTop}>
             <div className={styles.NavTopBtnContainer}>
                 <div className={styles.NavTopNavigationBtnsLeft}>
-                    <span className={styles.NavTopBtnLeftArrow}><Left /></span>
-                    <span className={styles.NavTopBtn}><Right /></span>
+                    <span className={styles.NavTopBtnLeftArrow}><Left onClick={() => history.goBack()} /></span>
+                    <span className={styles.NavTopBtn}><Right onClick={() => history.goForward()} /></span>
                 </div>
                 {currentUser ? loggedInIcons : loggedOutIcons}
             </div>
