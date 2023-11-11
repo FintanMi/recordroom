@@ -7,8 +7,27 @@ import NavTopbar from './NavTopbar'
 import Register from '../pages/auth/Register'
 import Login from '../pages/auth/Login'
 import '../api/axiosDefaults'
+import { useEffect, useState } from 'react';
+import { setClientToken } from '../spotify'
 
 const MainNew = () => {
+    const [token, setToken] = useState('');
+
+    useEffect(() => {
+        const token = window.localStorage.getItem('token');
+        const hash = window.location.hash;
+        window.location.hash = '';
+        if (!token && hash){
+            const _token = hash.split('&')[0].split('=')[1];
+            window.localStorage.setItem('token', _token);
+            setToken(_token);
+            setClientToken(_token);
+        } else {
+            setToken(token);
+            setClientToken(token);
+        }
+    }, [])
+
   return (
     <>
         <div className={styles.MainNew}>
@@ -23,7 +42,6 @@ const MainNew = () => {
                 <Route render={() => <p>Page not found</p>} />
             </Switch>
         </div>
-        
     </>
     
   )

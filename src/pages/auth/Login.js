@@ -9,6 +9,7 @@ import axios from 'axios'
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 import { setTokenTimestamp } from "../../utils/utils";
+import { loginEndpoint } from '../../spotify'
 
 function Login() {
     const setCurrentUser = useSetCurrentUser();
@@ -39,6 +40,25 @@ function Login() {
             setErrors(err.response?.data);
         }
     };
+
+    const handleClick = () => {
+        const clientId = '6a7c109f628741509125cdb88d35c366';
+        const redirectUri = 'https://3000-fintanmi-recordroom-uq3moihsq0.us2.codeanyapp.com/';
+        const authEndpoint = 'https://accounts.spotify.com/authorize';
+        const scopes = [
+            'user-read-email',
+            'user-read-private',
+            'user-modify-playback-state',
+            'user-read-playback-state',
+            'user-read-currently-playing',
+            'user-read-recently-playing',
+            'user-read-playback-position',
+            'user-library-read',
+            'playlist-read-private',
+            'user-read-top',
+        ];
+        window.location.href
+    }
 
     return (
         <Row className={styles.Login}>
